@@ -2,10 +2,15 @@ import XCTest
 @testable import StandardOutputCapture
 
 final class StandardOutputCaptureTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(StandardOutputCapture().text, "Hello, World!")
+    var outputCapture: StandardOutputCapture!
+
+    override func setUp() {
+        super.setUp()
+        outputCapture = StandardOutputCapture()
+    }
+
+    override func tearDown() {
+        outputCapture = nil
+        super.tearDown()
     }
 }
